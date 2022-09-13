@@ -16,7 +16,7 @@ We are comparing the following homomorphic encryption frameworks:
 
 ## Measured Data
 
-### System
+### Testing System
 
 Hardware:
 - Device: Acer Aspire 5 A515 54G 50F2
