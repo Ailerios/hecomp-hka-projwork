@@ -30,15 +30,33 @@ Software:
 - Language: Python
 
 ### Execution time
+Execution time is specified in seconds.
 
-|                | HElayers | Pyfhel | Microsoft SEAL |
-|----------------|----------|--------|----------------|
-| Addition       |          |        |                |
-| Subtraction    |          |        |                |
-| Multiplication |          |        |                |
+#### Ciphertext-Ciphertext:
+
+|                       | HElayers               | Pyfhel | Microsoft SEAL |
+|-----------------------|------------------------|--------|----------------|
+| Addition              | 0.00016214776039123535 |        |                |
+| Subtraction           | 0.00018151068687438966 |        |                |
+| Multiplication        | 0.009631774425506591   |        |                |
+
+#### Single Ciphertext:
+
+|                       | HElayers               | Pyfhel | Microsoft SEAL |
+|-----------------------|------------------------|--------|----------------|
+| Squaring              | 0.012601945877075195   |        |                |
+| Negation              | 0.00013540172576904298 |        |                |
+
+#### Ciphertext-Plaintext:
+
+|                       | HElayers               | Pyfhel | Microsoft SEAL |
+|-----------------------|------------------------|--------|----------------|
+| Addition              | 0.00009990882873535156 |        |                |
+| Subtraction           | 0.00010140013694763184 |        |                |
+| Multiplication        | 0.003941279411315918   |        |                |
 
 
-### Accuracy
+### Deviation
 
 
 [^1]: https://github.com/IBM/helayers
