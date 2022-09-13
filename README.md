@@ -1,10 +1,11 @@
-# hecomp-hka-projwork
-Comparison of HE frameworks
+# Homomorphic Encryption Frameworks Compared
 
-We are comparing the following homomorphic encryption frameworks:
+In this project we are comparing the following homomorphic encryption frameworks:
 * IBM HElayers[^1]
 * Pyfhel[^2]
 * Microsoft SEAL for Python[^3]
+
+Test code is provided in the sourcecode, including a Docker file containing all three frameworks, so you can get started quickly.
 
 ## Frameworks Overview
 
@@ -30,30 +31,30 @@ Software:
 - Language: Python
 
 ### Execution time
-Execution time is specified in milliseconds.
+Average execution time of 1000 operations with random integers between 1 and 100, except squaring, of which 500 operations have been executed. Time is specified in milliseconds and rounded to 6 decimals.
 
 #### Ciphertext-Ciphertext:
 
-|                       | HElayers              | Pyfhel              | Microsoft SEAL      |
-|-----------------------|-----------------------|---------------------|---------------------|
-| Addition              | 0.16214776039123535   | 0.1597461700439453  | 0.14014625549316407 |
-| Subtraction           | 0.18151068687438966   | 0.15580034255981446 | 0.155562162399292   |
-| Multiplication        | 9.631774425506591     | 24.495131731033324  | 4.981326103210449   |
+|                       | HElayers  | Pyfhel    | Microsoft SEAL  |
+|-----------------------|-----------|-----------|-----------------|
+| Addition              | 0.162148  | 0.159746  | 0.140146        |
+| Subtraction           | 0.181511  | 0.1558    | 0.155562        |
+| Multiplication        | 9.631774  | 24.495132 | 4.981326        |
 
 #### Single Ciphertext:
 
-|                       | HElayers              | Pyfhel              | Microsoft SEAL      |
-|-----------------------|-----------------------|---------------------|---------------------|
-| Squaring              | 12.601945877075195    | 14.476970195770263  | 3.8471388816833495  |
-| Negation              | 0.13540172576904298   | 16.452288389205934  | 0.13311004638671874 |
+|                       | HElayers  | Pyfhel    | Microsoft SEAL  |
+|-----------------------|-----------|-----------|-----------------|
+| Squaring              | 12.601946 | 14.476970 | 3.847139        |
+| Negation              | 0.135402  | 16.452288 | 0.133110        |
 
 #### Ciphertext-Plaintext:
 
-|                       | HElayers              | Pyfhel              | Microsoft SEAL      |
-|-----------------------|-----------------------|---------------------|---------------------|
-| Addition              | 0.09990882873535156   | 0.30337023735046385 | 0.12795901298522948 |
-| Subtraction           | 0.10140013694763184   | 0.3138706684112549  | 0.13303422927856445 |
-| Multiplication        | 3.941279411315918     | 0.2059304714202881  | 3.652517557144165   |
+|                       | HElayers  | Pyfhel    | Microsoft SEAL  |
+|-----------------------|-----------|-----------|-----------------|
+| Addition              | 0.099909  | 0.303370  | 0.127959        |
+| Subtraction           | 0.101400  | 0.313871  | 0.133034        |
+| Multiplication        | 3.941279  | 0.205930  | 3.652518        |
 
 
 ### Deviation
