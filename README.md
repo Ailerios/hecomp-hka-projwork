@@ -13,7 +13,7 @@ Test code is provided in the sourcecode, including a Docker file containing all 
 (Middle layer, offers auto-features)
 
 ### Pyfhel
-(Pyfhel is the easiest framework to get into, but it's generally slower than the others)
+(Pyfhel is the easiest framework to get into)
 
 ### Microsoft SEAL
 (Most deep framework of the three)
