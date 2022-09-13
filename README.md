@@ -10,10 +10,15 @@ Test code is provided in the sourcecode, including a Docker file containing all 
 ## Frameworks Overview
 
 ### IBM HElayers
+(Middle layer, offers auto-features)
 
 ### Pyfhel
+(Pyfhel is the easiest framework to get into, but it's generally slower than the others)
 
 ### Microsoft SEAL
+(Most deep framework of the three)
+
+### Available operations (table)
 
 ## Measured Data
 
