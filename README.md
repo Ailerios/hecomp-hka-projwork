@@ -35,8 +35,26 @@ Software:
 - Runtime: Jupyter Notebook inside Docker container
 - Language: Python
 
+### Configuration
+8192 slots have been used for all three frameworks.
+
+#### HElayers
+
+For HElayers, fractional_part_precision had to be decreased to 39, and integer_part_precision increased to 21 in order to support the calculation of 100\*100.
+
+Here are the used values:
+
+- num_slots = 8192
+- multiplication_depth = 2
+- fractional_part_precision = 39
+- integer_part_precision = 21
+- security_level = 128
+- Context: DefaultContext
+
+
+
 ### Execution time
-Average execution time of 1000 operations with random integers between 1 and 100, except squaring, of which 500 operations have been executed. Time is specified in milliseconds and rounded to 6 decimals.
+Average execution time of 1000 operations, except squaring, of which 500 operations have been executed. Time is specified in milliseconds and rounded to 6 decimals.
 
 #### Ciphertext-Ciphertext:
 
