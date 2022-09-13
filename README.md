@@ -37,24 +37,24 @@ Average execution time of 1000 operations with random integers between 1 and 100
 
 |                       | HElayers  | Pyfhel    | Microsoft SEAL  |
 |-----------------------|-----------|-----------|-----------------|
-| Addition              | 0.162148  | 0.159746  | 0.140146        |
-| Subtraction           | 0.181511  | 0.1558    | 0.155562        |
-| Multiplication        | 9.631774  | 24.495132 | 4.981326        |
+| Addition              | 0.116416  | 0.159746  | 0.140146        |
+| Subtraction           | 0.147656  | 0.1558    | 0.155562        |
+| Multiplication        | 8.525032  | 24.495132 | 4.981326        |
 
 #### Single Ciphertext:
 
 |                       | HElayers  | Pyfhel    | Microsoft SEAL  |
 |-----------------------|-----------|-----------|-----------------|
-| Squaring              | 12.601946 | 14.476970 | 3.847139        |
-| Negation              | 0.135402  | 16.452288 | 0.133110        |
+| Squaring              | 8.767272  | 14.476970 | 3.847139        |
+| Negation              | 0.104872  | 16.452288 | 0.133110        |
 
 #### Ciphertext-Plaintext:
 
 |                       | HElayers  | Pyfhel    | Microsoft SEAL  |
 |-----------------------|-----------|-----------|-----------------|
-| Addition              | 0.099909  | 0.303370  | 0.127959        |
-| Subtraction           | 0.101400  | 0.313871  | 0.133034        |
-| Multiplication        | 3.941279  | 0.205930  | 3.652518        |
+| Addition              | 0.080647  | 0.303370  | 0.127959        |
+| Subtraction           | 0.081139  | 0.313871  | 0.133034        |
+| Multiplication        | 2.994929  | 0.205930  | 3.652518        |
 
 
 ### Deviation
