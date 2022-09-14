@@ -10,6 +10,10 @@ Test code is provided in the sourcecode, including a Docker file containing all 
 ## Frameworks Overview
 
 ### IBM HElayers
+HElayers is a framework that enables developers to use fully homomorphic encryption without requiring specialized cryptographic knowledge. In addition to a low-level API for manipulating ciphertexts directly, it offers features for streamlined usage of machine learning with homomorphic encryption. It is delivered via a docker image that already contains demos of features like Credit Card Fraud Detection, Privacy Database Search, Text Classification, Heart Disease Prediction in different ways, such as with a Neural Network, Logistic or Linear Regression.
+
+(Other than Pyfhel and Microsoft SEAL, HElayers offers a dedicated squaring and power operation. WRONG, EDIT LATER)
+
 (Middle layer, offers auto-features)
 
 ### Pyfhel
