@@ -99,6 +99,29 @@ Test 1 is performed with a random integer between 1 and 100 for each slot. In ea
 #### Test 2
 In Test 2, all slots are filled with the maximum integer 100.
 
+##### Ciphertext-Ciphertext:
+
+|                       | HElayers  | Pyfhel    | Microsoft SEAL  |
+|-----------------------|-----------|-----------|-----------------|
+| Addition              | 0.143021  | 0.150896  | 0.131236        |
+| Subtraction           | 0.164373  | 0.151160  | 0.146674        |
+| Multiplication        | 8.271257  | 20.858954 | 5.046285        |
+
+##### Single Ciphertext:
+
+|                       | HElayers  | Pyfhel    | Microsoft SEAL  |
+|-----------------------|-----------|-----------|-----------------|
+| Squaring              | 10.835346 | 16.266907 | 4.119792        |
+| Negation              | 0.134604  | 16.037625 | 0.131858        |
+
+##### Ciphertext-Plaintext:
+
+|                       | HElayers  | Pyfhel    | Microsoft SEAL  |
+|-----------------------|-----------|-----------|-----------------|
+| Addition              | 0.113639  | 0.366492  | 0.147074        |
+| Subtraction           | 0.109920  | 0.379061  | 0.150686        |
+| Multiplication        | 4.356075  | 0.219237  | 0.217033        |
+
 
 [^1]: https://github.com/IBM/helayers
 [^2]: https://github.com/ibarrond/Pyfhel
