@@ -38,20 +38,32 @@ Software:
 ### Configuration
 8192 slots have been used for all three frameworks.
 
+For HElayers, fractional_part_precision had to be decreased from 40 (standard) to 39, and integer_part_precision increased from 20 (standard) to 21 in order to support the calculation of 100\*100. Without, overflow happened and resulted in negative results with the multiplication of two positive integers.
+
+Similar changes had to be conducted with Pyfhel and Microsoft SEAL for the same reason: The number of bits for the plaintext modulus has been increased from 20 (standard) to 22. In Pyfhel the attribute is called t_bits, in Microsoft SEAL it is passed as a parameter (refer to "CPerfSeal.ipynb" for details).
+
+Here are the configuration details for all three frameworks:
+
 #### HElayers
-
-For HElayers, fractional_part_precision had to be decreased to 39, and integer_part_precision increased to 21 in order to support the calculation of 100\*100.
-
-Here are the used values:
-
+- scheme: CKKS
 - num_slots = 8192
 - multiplication_depth = 2
 - fractional_part_precision = 39
 - integer_part_precision = 21
 - security_level = 128
-- Context: DefaultContext
 
+#### Pyfhel
+- scheme: BFV
+- n (number of slots): 8192
+- t (plaintext modulus): 65537
+- t_bits (number of bits in t): 22
+- sec (equivalent length of AES key in bits): 128
 
+#### Microsoft SEAL:
+- scheme: BFV
+- poly_modulus_degree: 8192
+- number of bits for plaintext modulus: 22
+- row_size: slot_count / 2
 
 ### Execution time
 Average execution time of 1000 operations, except squaring, of which 500 operations have been executed. Time is specified in milliseconds and rounded to 6 decimals.
