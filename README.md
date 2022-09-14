@@ -103,24 +103,24 @@ In Test 2, all slots are filled with the maximum integer 100.
 
 |                       | HElayers  | Pyfhel    | Microsoft SEAL  |
 |-----------------------|-----------|-----------|-----------------|
-| Addition              | 0.143021  | 0.150896  | 0.131236        |
-| Subtraction           | 0.164373  | 0.151160  | 0.146674        |
-| Multiplication        | 8.271257  | 20.858954 | 5.046285        |
+| Addition              | 0.143021  | 0.119526  | 0.131236        |
+| Subtraction           | 0.164373  | 0.117806  | 0.146674        |
+| Multiplication        | 8.271257  | 19.068434 | 5.046285        |
 
 ##### Single Ciphertext:
 
 |                       | HElayers  | Pyfhel    | Microsoft SEAL  |
 |-----------------------|-----------|-----------|-----------------|
-| Squaring              | 10.835346 | 16.266907 | 4.119792        |
-| Negation              | 0.134604  | 16.037625 | 0.131858        |
+| Squaring              | 10.835346 | 10.936287 | 4.119792        |
+| Negation              | 0.134604  | 17.419216 | 0.131858        |
 
 ##### Ciphertext-Plaintext:
 
 |                       | HElayers  | Pyfhel    | Microsoft SEAL  |
 |-----------------------|-----------|-----------|-----------------|
-| Addition              | 0.113639  | 0.366492  | 0.147074        |
-| Subtraction           | 0.109920  | 0.379061  | 0.150686        |
-| Multiplication        | 4.356075  | 0.219237  | 0.217033        |
+| Addition              | 0.113639  | 0.385319  | 0.147074        |
+| Subtraction           | 0.109920  | 0.339111  | 0.150686        |
+| Multiplication        | 4.356075  | 0.203711  | 0.217033        |
 
 
 [^1]: https://github.com/IBM/helayers
