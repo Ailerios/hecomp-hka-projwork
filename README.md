@@ -65,10 +65,15 @@ Here are the configuration details for all three frameworks:
 - number of bits for plaintext modulus: 22
 - row_size: slot_count / 2
 
-### Execution time
-Average execution time of 1000 operations, except squaring, of which 500 operations have been executed. Time is specified in milliseconds and rounded to 6 decimals.
+### Tests
+500 cycles with 2 operations per cycle with the same encrypted object. Exception is squaring, where only 1 operation per cycle is performed. New cycle means new encryption of fresh data. More operations per cycle resulted in overflows and negative results.
 
-#### Ciphertext-Ciphertext:
+Average execution time is specified in milliseconds and rounded to 6 decimals.
+
+#### Test 1
+Test 1 is performed with a random integer between 1 and 100 for each slot. In each cycle all slots are filled with new random integers.
+
+##### Ciphertext-Ciphertext:
 
 |                       | HElayers  | Pyfhel    | Microsoft SEAL  |
 |-----------------------|-----------|-----------|-----------------|
@@ -76,14 +81,14 @@ Average execution time of 1000 operations, except squaring, of which 500 operati
 | Subtraction           | 0.165524  | 0.151160  | 0.167902        |
 | Multiplication        | 9.509052  | 20.858954 | 6.683598        |
 
-#### Single Ciphertext:
+##### Single Ciphertext:
 
 |                       | HElayers  | Pyfhel    | Microsoft SEAL  |
 |-----------------------|-----------|-----------|-----------------|
 | Squaring              | 11.775293 | 16.266907 | 4.447789        |
 | Negation              | 0.146339  | 16.037625 | 0.148114        |
 
-#### Ciphertext-Plaintext:
+##### Ciphertext-Plaintext:
 
 |                       | HElayers  | Pyfhel    | Microsoft SEAL  |
 |-----------------------|-----------|-----------|-----------------|
@@ -91,8 +96,8 @@ Average execution time of 1000 operations, except squaring, of which 500 operati
 | Subtraction           | 0.110463  | 0.379061  | 0.173108        |
 | Multiplication        | 4.859381  | 0.219237  | 3.945497        |
 
-
-### Deviation
+#### Test 2
+In Test 2, all slots are filled with the maximum integer 100.
 
 
 [^1]: https://github.com/IBM/helayers
