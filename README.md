@@ -17,6 +17,8 @@ HElayers is a framework that enables developers to use fully homomorphic encrypt
 (Middle layer, offers auto-features)
 
 ### Pyfhel
+Pyfhel is a library that uses Microsoft SEAL in the background and provides easy access to homomorphic encryption functionality. It uses a syntax similar to normal arithmetic such as *, +, -, >>, \*\*.
+
 (Pyfhel is the easiest framework to get into)
 
 ### Microsoft SEAL
