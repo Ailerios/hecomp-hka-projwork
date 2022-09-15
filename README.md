@@ -16,9 +16,11 @@ HElayers is a library that enables developers to use fully homomorphic encryptio
 Pyfhel is a library that uses Microsoft SEAL in the background and provides easy access to homomorphic encryption functionality. It uses a syntax similar to normal arithmetic such as \*, +, -, >>, \*\*. It supports Integer FHE with BFV and Fixed-point FHE with CKKS. Thus it is an easy library to get started quickly, however as the numbers below show, it is generally slower than HElayers and SEAL. The docker file contains only one example how to use Pyfhel with Integer FHE via BFV, however there are more extensive tutorials available online[^5].
 
 ### SEAL-Python
-SEAL-Python is a lightweight python binding for the Microsoft SEAL framework.
+SEAL-Python is a lightweight python binding for the Microsoft SEAL framework. The image provides examples for basic BGV arithmetics, matrix operations and serialization. There is little documentation available, so you might need to dig through some sourcecode to get all of its features, however it's not complicated - the wrapper only has 687 lines.
 
-### Available operations (table)
+### Available operations
+
+
 
 ## Measured Data
 
@@ -75,7 +77,7 @@ Test 1 is performed with a random integer between 1 and 100 for each slot. In ea
 
 ##### Ciphertext-Ciphertext:
 
-|                       | HElayers  | Pyfhel    | Microsoft SEAL  |
+|                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
 | Addition              | 0.155078  | 0.150896  | 0.143598        |
 | Subtraction           | 0.165524  | 0.151160  | 0.167902        |
@@ -83,14 +85,14 @@ Test 1 is performed with a random integer between 1 and 100 for each slot. In ea
 
 ##### Single Ciphertext:
 
-|                       | HElayers  | Pyfhel    | Microsoft SEAL  |
+|                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
 | Squaring              | 11.775293 | 16.266907 | 4.447789        |
 | Negation              | 0.146339  | 16.037625 | 0.148114        |
 
 ##### Ciphertext-Plaintext:
 
-|                       | HElayers  | Pyfhel    | Microsoft SEAL  |
+|                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
 | Addition              | 0.113416  | 0.366492  | 0.164739        |
 | Subtraction           | 0.110463  | 0.379061  | 0.173108        |
@@ -101,7 +103,7 @@ In Test 2, all slots are filled with the maximum integer 100.
 
 ##### Ciphertext-Ciphertext:
 
-|                       | HElayers  | Pyfhel    | Microsoft SEAL  |
+|                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
 | Addition              | 0.143021  | 0.119526  | 0.131236        |
 | Subtraction           | 0.164373  | 0.117806  | 0.146674        |
@@ -109,14 +111,14 @@ In Test 2, all slots are filled with the maximum integer 100.
 
 ##### Single Ciphertext:
 
-|                       | HElayers  | Pyfhel    | Microsoft SEAL  |
+|                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
 | Squaring              | 10.835346 | 10.936287 | 4.119792        |
 | Negation              | 0.134604  | 17.419216 | 0.131858        |
 
 ##### Ciphertext-Plaintext:
 
-|                       | HElayers  | Pyfhel    | Microsoft SEAL  |
+|                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
 | Addition              | 0.113639  | 0.385319  | 0.147074        |
 | Subtraction           | 0.109920  | 0.339111  | 0.150686        |
