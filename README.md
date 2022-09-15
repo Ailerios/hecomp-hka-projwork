@@ -90,6 +90,8 @@ Here are the configuration details for all three frameworks:
 ### Tests
 500 cycles with 2 operations per cycle with the same encrypted object. Exception is squaring, where only 1 operation per cycle is performed. New cycle means new encryption of fresh data. More operations per cycle resulted in overflows and negative results.
 
+A deviation was only measurable with HElayers, Pyfhel and SEAL-Python had a deviation of 0.0 when the right parameters were applied.
+
 Average execution time is specified in milliseconds and rounded to 6 decimals.
 
 #### Test 1
@@ -97,52 +99,52 @@ Test 1 is performed with a random integer between 1 and 100 for each slot. In ea
 
 ##### Ciphertext-Ciphertext:
 
-|                       | HElayers  | Pyfhel    | SEAL-Python     |
-|-----------------------|-----------|-----------|-----------------|
-| Addition              | 0.155078  | 0.150896  | 0.143598        |
-| Subtraction           | 0.165524  | 0.151160  | 0.167902        |
-| Multiplication        | 9.509052  | 20.858954 | 6.683598        |
+|                       | HElayers  | Pyfhel    | SEAL-Python     | Deviation (HElayers)  |
+|-----------------------|-----------|-----------|-----------------|-----------------------|
+| Addition              | 0.155078  | 0.150896  | 0.143598        | 0.000032              |
+| Subtraction           | 0.165524  | 0.151160  | 0.167902        | 0.000032              |
+| Multiplication        | 9.509052  | 20.858954 | 6.683598        | 0.100574              |
 
 ##### Single Ciphertext:
 
-|                       | HElayers  | Pyfhel    | SEAL-Python     |
-|-----------------------|-----------|-----------|-----------------|
-| Squaring              | 11.775293 | 16.266907 | 4.447789        |
-| Negation              | 0.146339  | 16.037625 | 0.148114        |
+|                       | HElayers  | Pyfhel    | SEAL-Python     | Deviation (HElayers)  |
+|-----------------------|-----------|-----------|-----------------|-----------------------|
+| Squaring              | 11.775293 | 16.266907 | 4.447789        | 0.002911              |
+| Negation              | 0.146339  | 16.037625 | 0.148114        | 0.000014              |
 
 ##### Ciphertext-Plaintext:
 
-|                       | HElayers  | Pyfhel    | SEAL-Python     |
-|-----------------------|-----------|-----------|-----------------|
-| Addition              | 0.113416  | 0.366492  | 0.164739        |
-| Subtraction           | 0.110463  | 0.379061  | 0.173108        |
-| Multiplication        | 4.859381  | 0.219237  | 3.945497        |
+|                       | HElayers  | Pyfhel    | SEAL-Python     | Deviation (HElayers)  |
+|-----------------------|-----------|-----------|-----------------|-----------------------|
+| Addition              | 0.113416  | 0.366492  | 0.164739        | 0.000014              |
+| Subtraction           | 0.110463  | 0.379061  | 0.173108        | 0.000014              |
+| Multiplication        | 4.859381  | 0.219237  | 3.945497        | 0.048829              |
 
 #### Test 2
 In Test 2, all slots are filled with the maximum integer 100.
 
 ##### Ciphertext-Ciphertext:
 
-|                       | HElayers  | Pyfhel    | SEAL-Python     |
-|-----------------------|-----------|-----------|-----------------|
-| Addition              | 0.143021  | 0.119526  | 0.131236        |
-| Subtraction           | 0.164373  | 0.117806  | 0.146674        |
-| Multiplication        | 8.271257  | 19.068434 | 5.046285        |
+|                       | HElayers  | Pyfhel    | SEAL-Python     | Deviation (HElayers)  |
+|-----------------------|-----------|-----------|-----------------|-----------------------|
+| Addition              | 0.143021  | 0.119526  | 0.131236        | 0.000032
+| Subtraction           | 0.164373  | 0.117806  | 0.146674        | 0.000032
+| Multiplication        | 8.271257  | 19.068434 | 5.046285        | 0.354025
 
 ##### Single Ciphertext:
 
-|                       | HElayers  | Pyfhel    | SEAL-Python     |
-|-----------------------|-----------|-----------|-----------------|
-| Squaring              | 10.835346 | 10.936287 | 4.119792        |
-| Negation              | 0.134604  | 17.419216 | 0.131858        |
+|                       | HElayers  | Pyfhel    | SEAL-Python     | Deviation (HElayers)  |
+|-----------------------|-----------|-----------|-----------------|-----------------------|
+| Squaring              | 10.835346 | 10.936287 | 4.119792        | 0.005780              |
+| Negation              | 0.134604  | 17.419216 | 0.131858        | 0.000014              |
 
 ##### Ciphertext-Plaintext:
 
-|                       | HElayers  | Pyfhel    | SEAL-Python     |
-|-----------------------|-----------|-----------|-----------------|
-| Addition              | 0.113639  | 0.385319  | 0.147074        |
-| Subtraction           | 0.109920  | 0.339111  | 0.150686        |
-| Multiplication        | 4.356075  | 0.203711  | 0.217033        |
+|                       | HElayers  | Pyfhel    | SEAL-Python     | Deviation (HElayers)  |
+|-----------------------|-----------|-----------|-----------------|-----------------------|
+| Addition              | 0.113639  | 0.385319  | 0.147074        | 0.000014              |
+| Subtraction           | 0.109920  | 0.339111  | 0.150686        | 0.000014              |
+| Multiplication        | 4.356075  | 0.203711  | 0.217033        | 0.144504              |
 
 
 [^1]: https://github.com/IBM/helayers
