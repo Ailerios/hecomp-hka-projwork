@@ -5,7 +5,7 @@ In this project we are comparing the following three homomorphic encryption libr
 * Pyfhel[^2]
 * SEAL-Python[^3]
 
-Test code is provided in the sourcecode, including a Docker file containing all three libraries, so you can get started quickly.
+Test code is provided in the sourcecode, including a Docker file containing all three libraries, so you can get started quickly. The docker file is about 5.6GB in uncompressed form.
 
 ## Frameworks Overview
 
