@@ -61,7 +61,7 @@ Software:
 ### Configuration
 8192 slots have been used for Pyfhel and SEAL-Python.
 
-For HElayers, only 1024 slots have been used, since I was not able to find a value for the plaintext prime modulus in a way that achieves 8192 slots. Instead, the Cyclotomic polynomial had to be increased from 128 to 2048. Also, the plaintext prime modulus had to be increased from 127 to 4079617. Without, overflow happened and resulted in negative results with the multiplication of two positive integers.
+For HElayers, only 1024 slots have been used, since I was not able to find a value for the plaintext prime modulus in a way that achieves 8192 slots. Instead, the Cyclotomic polynomial had to be increased from 128 to 2048. Secondly, the plaintext prime modulus had to be increased from 127 to 4079617. Without, overflow happened and resulted in negative results with the multiplication of two positive integers. Also, I had to take out the Subtraction operation, since negative values always resulted in a negative overflow, indicating that the slots only store unsigned integers. One way to solve this would be to manually interpret the results as signed integers, however time ran out in the end.
 
 Similar changes had to be conducted with Pyfhel and Microsoft SEAL for the same reason: The number of bits for the plaintext modulus has been increased from 20 (standard) to 22. In Pyfhel the attribute is called t_bits, in Microsoft SEAL it is passed as a parameter (refer to "CPerfSeal.ipynb" for details).
 
@@ -128,24 +128,24 @@ In Test 2, all slots are filled with the maximum integer 100.
 
 |                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
-| Addition              | 0.143021  | 0.119526  | 0.131236        |
-| Subtraction           | 0.164373  | 0.117806  | 0.146674        |
-| Multiplication        | 8.271257  | 19.068434 | 5.046285        |
+| Addition              | 0.048101  | 0.119526  | 0.131236        |
+| Subtraction           | n.a.      | 0.117806  | 0.146674        |
+| Multiplication        | 8.460830  | 19.068434 | 5.046285        |
 
 ##### Single Ciphertext:
 
 |                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
-| Squaring              | 10.835346 | 10.936287 | 4.119792        |
-| Negation              | 0.134604  | 17.419216 | 0.131858        |
+| Squaring              | 4.214841  | 10.936287 | 4.119792        |
+| Negation              | 0.047222  | 17.419216 | 0.131858        |
 
 ##### Ciphertext-Plaintext:
 
 |                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
-| Addition              | 0.113639  | 0.385319  | 0.147074        |
-| Subtraction           | 0.109920  | 0.339111  | 0.150686        |
-| Multiplication        | 4.356075  | 0.203711  | 0.217033        |
+| Addition              | 1.673174  | 0.385319  | 0.147074        |
+| Subtraction           | n.a.      | 0.339111  | 0.150686        |
+| Multiplication        | 1.713175  | 0.203711  | 0.217033        |
 
 ## Conclusion
 
