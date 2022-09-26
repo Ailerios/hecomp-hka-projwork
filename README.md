@@ -1,6 +1,9 @@
 # Homomorphic Encryption Libraries Compared
 
-In this project we are comparing the following three homomorphic encryption libraries for Python:
+In this project, we are comparing three homomorphic encryption libraries for Python. The goal is to learn, if current homomorphic encryption libraries are accessible to software engineers without formal education in cryptography.
+
+The three libraries are:
+
 * IBM HElayers[^1]
 * Pyfhel[^2]
 * SEAL-Python[^3]
@@ -11,8 +14,6 @@ Test code is provided in the sourcecode, including a Docker file containing all 
 
 ### IBM HElayers
 HElayers is a library that enables developers to use fully homomorphic encryption with Machine Learning, without requiring specialized cryptographic knowledge. In addition to a low-level API for manipulating ciphertexts directly, it offers features for streamlined usage of machine learning with homomorphic encryption. It is delivered via a docker image that already contains demos of features like Credit Card Fraud Detection, Privacy Database Search, Text Classification, Heart Disease Prediction in different ways, such as with a Neural Network, Logistic or Linear Regression. It is free for non-commercial purposes, for commercial purposes you will need to obtain a paid license. Images are provided for IBM's cloud s390x and x86 architectures, for Python "helayers-pylab" and C++ "helayers-lab"[^4]. HElayers does not have a designated power operation, but it relinearizes automatically and applies optimizations. There are also raw operations available.
-
-In short:
 
 #### Advantages
 - Specialized tools for applying Homomorphic Encryption to Machine Learning
@@ -58,9 +59,9 @@ Software:
 - Language: Python
 
 ### Configuration
-8192 slots have been used for all three frameworks.
+8192 slots have been used for Pyfhel and SEAL-Python.
 
-For HElayers, fractional_part_precision had to be decreased from 40 (standard) to 39, and integer_part_precision increased from 20 (standard) to 21 in order to support the calculation of 100\*100. Without, overflow happened and resulted in negative results with the multiplication of two positive integers.
+For HElayers, only 1024 slots have been used, since I was not able to find a value for the plaintext prime modulus in a way that achieves 8192 slots. Instead, the Cyclotomic polynomial had to be increased from 128 to 2048. Also, the plaintext prime modulus had to be increased from 127 to 4079617. Without, overflow happened and resulted in negative results with the multiplication of two positive integers.
 
 Similar changes had to be conducted with Pyfhel and Microsoft SEAL for the same reason: The number of bits for the plaintext modulus has been increased from 20 (standard) to 22. In Pyfhel the attribute is called t_bits, in Microsoft SEAL it is passed as a parameter (refer to "CPerfSeal.ipynb" for details).
 
@@ -145,6 +146,10 @@ In Test 2, all slots are filled with the maximum integer 100.
 | Addition              | 0.113639  | 0.385319  | 0.147074        |
 | Subtraction           | 0.109920  | 0.339111  | 0.150686        |
 | Multiplication        | 4.356075  | 0.203711  | 0.217033        |
+
+## Conclusion
+
+
 
 
 [^1]: https://github.com/IBM/helayers
