@@ -149,9 +149,13 @@ In Test 2, all slots are filled with the maximum integer 100.
 | Subtraction           | n.a.      | 0.339111  | 0.150686        |
 | Multiplication        | 1.713175  | 0.203711  | 0.217033        |
 
+### Data Conclusion
+
+Overall tendence of the data seems to suggest, that SEAL-Python performs the best of the three libraries. Although Pyfhel is the easiest to use, it comes with a heavy increase in computation time per operation. HElayers is in the midfield.
+
 ## Conclusion
 
-
+Although there are some guides and examples out there, I cannot recommend Homomorphic Encryption to computer scientists without at least getting a foundation in the mathematical theories behind. The parameter tuning has been done by trial-and-error, but they critically determine the performance of the calculations. In hindsight, I am looking forward to dive into the world of Homomorphic Encryptions again, however next time, with some more theoretical education.
 
 
 [^1]: https://github.com/IBM/helayers
