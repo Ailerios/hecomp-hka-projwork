@@ -1,6 +1,6 @@
 # Homomorphic Encryption Libraries Compared
 
-In this project, we are comparing three homomorphic encryption libraries for Python. The goal is to learn, if current homomorphic encryption libraries are accessible to software engineers without formal education in cryptography.
+In this project, we are comparing three homomorphic encryption libraries for Python. The goal is to learn, how accessible current homomorphic encryption libraries are to software engineers without formal education in cryptography.
 
 The three libraries are:
 
