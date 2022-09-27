@@ -19,14 +19,14 @@ HElayers is a library that enables developers to use fully homomorphic encryptio
 
 #### Advantages
 - Specialized tools for applying Homomorphic Encryption to Machine Learning
-- Applies some optimizations
+- Applies some optimizations, quoting the class reference: _"may perform some additional light-weight tasks allowing for a smooth sequence of operations"_ [^5]
 #### Disadvantages
 - Slightly longer execution time per operation than SEAL-Python
 - Requires a paid license for commercial purposes
 - Lack of documentation: There are examples, but only an auto-generated class reference.
 
 ### Pyfhel
-Pyfhel is a library that uses Microsoft SEAL in the background and provides easy access to homomorphic encryption functionality. It uses a syntax similar to normal arithmetic such as \*, +, -, >>, \*\*. It supports Integer FHE with BFV and Fixed-point FHE with CKKS. Thus it is an easy library to get started quickly, however as the numbers below show, it is generally slower than HElayers and SEAL. The docker file contains only one example how to use Pyfhel with Integer FHE via BFV, however there are more extensive tutorials available online[^5].
+Pyfhel is a library that uses Microsoft SEAL in the background and provides easy access to homomorphic encryption functionality. It uses a syntax similar to normal arithmetic such as \*, +, -, >>, \*\*. It supports Integer FHE with BFV and Fixed-point FHE with CKKS. Thus it is an easy library to get started quickly, however as the numbers below show, it is generally slower than HElayers and SEAL. The docker file contains only one example how to use Pyfhel with Integer FHE via BFV, however there are more extensive tutorials available online[^6].
 
 #### Advantages
 - Easy to start
@@ -163,4 +163,5 @@ Although there are some guides and examples out there, I cannot recommend Homomo
 [^2]: https://github.com/ibarrond/Pyfhel
 [^3]: https://github.com/Huelse/SEAL-Python
 [^4]: https://developer.ibm.com/blogs/secure-ai-workloads-using-fully-homomorphic-encrypted-data/
-[^5]: https://pyfhel.readthedocs.io/en/latest/_autoexamples/index.html
+[^5]: https://ibm.github.io/fhe-toolkit-linux/html/ml-helib/classhelayers_1_1_c_tile.html#a58f4ca21f819eaf447eb8698d1c446ec
+[^6]: https://pyfhel.readthedocs.io/en/latest/_autoexamples/index.html
