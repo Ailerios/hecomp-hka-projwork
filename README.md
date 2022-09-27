@@ -23,6 +23,7 @@ HElayers is a library that enables developers to use fully homomorphic encryptio
 #### Disadvantages
 - Slightly longer execution time per operation than SEAL-Python
 - Requires a paid license for commercial purposes
+- Lack of documentation: There are examples, but only an auto-generated class reference.
 
 ### Pyfhel
 Pyfhel is a library that uses Microsoft SEAL in the background and provides easy access to homomorphic encryption functionality. It uses a syntax similar to normal arithmetic such as \*, +, -, >>, \*\*. It supports Integer FHE with BFV and Fixed-point FHE with CKKS. Thus it is an easy library to get started quickly, however as the numbers below show, it is generally slower than HElayers and SEAL. The docker file contains only one example how to use Pyfhel with Integer FHE via BFV, however there are more extensive tutorials available online[^5].
