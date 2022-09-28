@@ -8,7 +8,7 @@ The three libraries are:
 * Pyfhel[^2]
 * SEAL-Python[^3]
 
-Test code is provided in the sourcecode, including a Docker file containing all three libraries, so you can get started quickly. The docker file is about 5.6GB in uncompressed form. You can pull it via the command: ```docker pull ailerios/projwork_comp_he_libraries```
+Test code is provided in the sourcecode, including a Docker file containing all three libraries, so you can get started quickly. The docker file is about 5.64GB in uncompressed form. You can pull it via the command: ```docker pull ailerios/projwork_comp_he_libraries```
 
 The link to this repository is: https://github.com/Ailerios/hecomp-hka-projwork
 
