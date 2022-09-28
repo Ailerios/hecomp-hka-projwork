@@ -105,26 +105,26 @@ Test 1 is performed with a random integer between 1 and 100 for each slot. In ea
 
 |                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
-| Addition              | 0.574405  | 0.116420  | 0.143598        |
-| Subtraction           | 0.590532  | 0.153219  | 0.136508        |
-| Multiplication        | 143.159352| 26.955585 | 24.720832       |
+| Addition              | 0.574405  | 0.116420  | 0.101044        |
+| Subtraction           | 0.590532  | 0.153219  | 0.119373        |
+| Multiplication        | 143.159352| 26.955585 | 11.782176       |
 
 ##### Single Ciphertext:
 
 |                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
-| Squaring              | 111.080257| 14.357820 | 15.564545       |
-| Negation              | 0.462940  | 19.244909 | 18.062968       |
-| Left Rotation         | 225.597397| 6.192656  | nya             |
-| Right Rotation        | 149.627825| 6.140651  | nya             |
+| Squaring              | 111.080257| 14.357820 | 3.709783        |
+| Negation              | 0.462940  | 19.244909 | 0.126003        |
+| Left Rotation         | 225.597397| 6.192656  | 6.566287        |
+| Right Rotation        | 149.627825| 6.140651  | 6.592585        |
 
 ##### Ciphertext-Plaintext:
 
 |                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
-| Addition              | 27.632771 | 0.327377  | 0.327240        |
-| Subtraction           | 38.966958 | 0.362943  | 0.351506        |
-| Multiplication        | 24.003798 | 3.327504  | 3.280312        |
+| Addition              | 27.632771 | 0.327377  | 0.146342        |
+| Subtraction           | 38.966958 | 0.362943  | 0.162973        |
+| Multiplication        | 24.003798 | 3.327504  | 3.328133        |
 
 #### Test 2
 In Test 2, all slots are filled with the maximum integer 100.
@@ -133,26 +133,26 @@ In Test 2, all slots are filled with the maximum integer 100.
 
 |                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
-| Addition              | 1.141045  | 0.119359  | 0.131236        |
-| Subtraction           | 1.146679  | 0.122014  | 0.146674        |
-| Multiplication        | 258.167802| 19.078499 | 5.046285        |
+| Addition              | 1.141045  | 0.119359  | 0.098249        |
+| Subtraction           | 1.146679  | 0.122014  | 0.106374        |
+| Multiplication        | 258.167802| 19.078499 | 8.752813        |
 
 ##### Single Ciphertext:
 
 |                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
-| Squaring              | 196.036979| 10.843201 | 4.119792        |
-| Negation              | 0.931942  | 15.794727 | 0.131858        |
-| Left Rotation         | 436.420230| 6.025279  | nya             |
-| Right Rotation        | 285.941758| 4.975399  | nya             |
+| Squaring              | 196.036979| 10.843201 | 3.713743        |
+| Negation              | 0.931942  | 15.794727 | 0.136612        |
+| Left Rotation         | 436.420230| 6.025279  | 5.917861        |
+| Right Rotation        | 285.941758| 4.975399  | 6.636212        |
 
 ##### Ciphertext-Plaintext:
 
 |                       | HElayers  | Pyfhel    | SEAL-Python     |
 |-----------------------|-----------|-----------|-----------------|
-| Addition              | 48.082252 | 0.399861  | 0.147074        |
-| Subtraction           | 71.116051 | 0.357513  | 0.150686        |
-| Multiplication        | 44.642202 | 0.209374  | 0.217033        |
+| Addition              | 48.082252 | 0.399861  | 0.141598        |
+| Subtraction           | 71.116051 | 0.357513  | 0.170619        |
+| Multiplication        | 44.642202 | 0.209374  | 0.238753        |
 
 ### Data Conclusion
 
