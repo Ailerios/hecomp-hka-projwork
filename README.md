@@ -39,8 +39,6 @@ Pyfhel is a library that uses Microsoft SEAL in the background and provides easy
 ### SEAL-Python
 SEAL-Python is a lightweight python binding for the Microsoft SEAL framework. The image provides examples for basic BGV arithmetics, matrix operations and serialization. There is little documentation available, so you might need to dig through some sourcecode to get all of its features, however it's not complicated - the wrapper only has 687 lines. SEAL-Python does not have a designated power operation.
 
-For accessibility, 
-
 #### Advantages
 - Very fast computation times
 - Offers easy access to some of Microsoft SEAL's functionality including matrix operations
