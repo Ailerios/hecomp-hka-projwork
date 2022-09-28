@@ -27,7 +27,7 @@ For manipulating ciphertexts directly: If CKKS is used, it is possible to direct
 - Lack of documentation: There are examples, but only an auto-generated class reference
 
 ### Pyfhel
-Pyfhel is a library that uses Microsoft SEAL in the background and provides easy access to homomorphic encryption functionality. It uses a syntax similar to normal arithmetic such as \*, +, -, >>, \*\*. It supports Integer FHE with BFV and Fixed-point FHE with CKKS. Thus it is an easy library to get started quickly. The docker file that it ships in, contains only one example how to use Pyfhel with Integer FHE via BFV, however there are more extensive tutorials available online[^6].
+Pyfhel is a library that uses Microsoft SEAL in the background and provides easy access to homomorphic encryption functionality. It uses a syntax similar to normal arithmetic such as \*, +, -, >>, \*\*. It supports Integer FHE with BFV and Fixed-point FHE with CKKS. Thus it is an easy library to get started quickly. The docker file that it ships in, contains only one example how to use Pyfhel with Integer FHE via BFV, however there are more extensive tutorials available online[^6]. That makes Pyfhel the best library to start with.
 
 #### Advantages
 - Easy to start
@@ -38,6 +38,8 @@ Pyfhel is a library that uses Microsoft SEAL in the background and provides easy
 
 ### SEAL-Python
 SEAL-Python is a lightweight python binding for the Microsoft SEAL framework. The image provides examples for basic BGV arithmetics, matrix operations and serialization. There is little documentation available, so you might need to dig through some sourcecode to get all of its features, however it's not complicated - the wrapper only has 687 lines. SEAL-Python does not have a designated power operation.
+
+For accessibility, 
 
 #### Advantages
 - Very fast computation times
@@ -168,6 +170,13 @@ Although there are some guides and examples out there, I cannot recommend Homomo
 
 To make homomorphic encryption more accessible to other software engineers, I would like to see more guides and documentation that explains some of the required knowledge in a way, that enables you with enough knowledge to use homomorphic encryption in an efficient way. For example it is important to understand how parameters affect the performance and available features.
 
+In terms of accessibility, I rank the tested libraries as follows from easy to hard:
+
+1. Pyfhel
+2. SEAL-Python
+3. HElayers
+
+Pyfhel is the only library of the three that has online tutorials available. SEAL-Python is accessible to software engineers due to its lightweightness. Even without understanding how a Python layer for C++ works, you are able to extract the syntax of the methods from the sourcecode, and they are named in a very accessible way. HElayers is a mixed bag, some tasks are accessible, especially due to their demos on the Docker image. However, I was not able to find a documentation outside of the generated class reference [^5], and with BGV I quickly ran into a situation where I needed deeper mathematical knowledge about the BGV scheme.
 
 [^1]: https://github.com/IBM/helayers
 [^2]: https://github.com/ibarrond/Pyfhel
