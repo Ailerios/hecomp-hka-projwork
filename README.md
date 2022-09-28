@@ -71,7 +71,7 @@ Similar changes had to be conducted with Pyfhel and Microsoft SEAL for the same 
 Here are the configuration details for all three frameworks:
 
 #### HElayers
-- scheme: CKKS
+- scheme: BGV
 - num_slots = 8192
 - multiplication_depth = 2
 - fractional_part_precision = 39
@@ -80,10 +80,11 @@ Here are the configuration details for all three frameworks:
 
 #### Pyfhel
 - scheme: BFV
-- n (number of slots): 8192
-- t (plaintext modulus): 65537
-- t_bits (number of bits in t): 22
-- sec (equivalent length of AES key in bits): 128
+- p = 4079617 (Plaintext prime modulus)
+- m = 8192 * 2 (Cyclotomic polynomial - defines phi(m))
+- r = 1 (Hensel lifting)
+- L = 1000 (Number of bits of the modulus chain)
+- c = 2 (Number of columns of Key-Switching matrix)
 
 #### Microsoft SEAL:
 - scheme: BFV
