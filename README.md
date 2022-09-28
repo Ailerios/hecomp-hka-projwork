@@ -158,7 +158,7 @@ In Test 2, all slots are filled with the maximum integer 100.
 
 ### Data Conclusion
 
-It is apparent, that during these tests, HElayers performs particularly slower than Pyfhel and SEAL-Python. However that has to be taken with care, since I was not able to calculate the prime modulus. It is probable that there is a smaller prime that still prevents overflow.
+It is apparent, that during these tests, HElayers performs particularly slower than Pyfhel and SEAL-Python. However that has to be taken with care, since I was not able to calculate the prime modulus. It is probable that there is a smaller prime that still prevents overflow, but enables faster computation times.
 
 Both Pyfhel and SEAL-Python use Microsoft SEAL as the underlying framework, and both have been tested with BFV. However, SEAL-Python with its lightweightness achieves the lowest computation times. Although Pyfhel is comfortable to work with, it is slower in the end.
 
