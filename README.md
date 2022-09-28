@@ -64,7 +64,7 @@ Software:
 ### Configuration
 8192 slots have been used for Pyfhel and SEAL-Python.
 
-For HElayers, only 1024 slots have been used, since I was not able to find a value for the plaintext prime modulus in a way that achieves 8192 slots. Instead, the Cyclotomic polynomial had to be increased from 128 to 2048. Secondly, the plaintext prime modulus had to be increased from 127 to 4079617. Without, overflow happened and resulted in negative results with the multiplication of two positive integers. Also, I had to take out the Subtraction operation, since negative values always resulted in a negative overflow, indicating that the slots only store unsigned integers. One way to solve this would be to manually interpret the results as signed integers, however time ran out in the end.
+For HElayers, the plaintext prime modulus had to be increased from 127 to 4079617. Without, overflow happened and resulted in negative results with the multiplication of two positive integers. The value was reverse-engineered from the optimizer of SEAL-Python, since I was not able to calculate a value for the plaintext prime modulus in a way that achieves 8192 slots.
 
 Similar changes had to be conducted with Pyfhel and Microsoft SEAL for the same reason: The number of bits for the plaintext modulus has been increased from 20 (standard) to 22. In Pyfhel the attribute is called t_bits, in Microsoft SEAL it is passed as a parameter (refer to "CPerfSeal.ipynb" for details).
 
@@ -72,19 +72,18 @@ Here are the configuration details for all three frameworks:
 
 #### HElayers
 - scheme: BGV
-- num_slots = 8192
-- multiplication_depth = 2
-- fractional_part_precision = 39
-- integer_part_precision = 21
-- security_level = 128
-
-#### Pyfhel
-- scheme: BFV
 - p = 4079617 (Plaintext prime modulus)
 - m = 8192 * 2 (Cyclotomic polynomial - defines phi(m))
 - r = 1 (Hensel lifting)
 - L = 1000 (Number of bits of the modulus chain)
 - c = 2 (Number of columns of Key-Switching matrix)
+
+#### Pyfhel
+- scheme: BFV
+- n (number of slots): 8192
+- t (plaintext modulus): 65537
+- t_bits (number of bits in t): 22
+- sec (equivalent length of AES key in bits): 128
 
 #### Microsoft SEAL:
 - scheme: BFV
