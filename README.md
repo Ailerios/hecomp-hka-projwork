@@ -45,6 +45,7 @@ SEAL-Python is a lightweight python binding for the Microsoft SEAL framework. Th
 
 #### Disadvantages
 - Limited functionality compared to Pyfhel and HElayers
+- No documentation
 
 ## Measured Data
 
