@@ -17,29 +17,30 @@ The link to this repository is: https://github.com/Ailerios/hecomp-hka-projwork
 ### IBM HElayers
 HElayers is a library that enables developers to use fully homomorphic encryption with Machine Learning, without requiring specialized cryptographic knowledge. In addition to a low-level API for manipulating ciphertexts directly, it offers features for streamlined usage of machine learning with homomorphic encryption. It is delivered via a docker image that already contains demos of features like Credit Card Fraud Detection, Privacy Database Search, Text Classification, Heart Disease Prediction in different ways, such as with a Neural Network, Logistic or Linear Regression. It is free for non-commercial purposes, for commercial purposes you will need to obtain a paid license. Images are provided for IBM's cloud s390x and x86 architectures, for Python "helayers-pylab" and C++ "helayers-lab"[^4]. HElayers does not have a designated power operation, but it relinearizes automatically and applies optimizations. There are also raw operations available.
 
+For manipulating ciphertexts directly: If CKKS is used, it is possible to directly specify the required parameters and they are clearly labeled: _num_slots, multiplication_depth, fractional_part_precision, integer_part_precision_ and _security_level_. For BGV, mathematical parameters are used, that are not accesible without deeper knowledge about how BGV works.
+
 #### Advantages
 - Specialized tools for applying Homomorphic Encryption to Machine Learning
 - Applies some optimizations, quoting the class reference: _"may perform some additional light-weight tasks allowing for a smooth sequence of operations"_ [^5]
 #### Disadvantages
-- Slightly longer execution time per operation than SEAL-Python
 - Requires a paid license for commercial purposes
-- Lack of documentation: There are examples, but only an auto-generated class reference.
+- Lack of documentation: There are examples, but only an auto-generated class reference
 
 ### Pyfhel
-Pyfhel is a library that uses Microsoft SEAL in the background and provides easy access to homomorphic encryption functionality. It uses a syntax similar to normal arithmetic such as \*, +, -, >>, \*\*. It supports Integer FHE with BFV and Fixed-point FHE with CKKS. Thus it is an easy library to get started quickly, however as the numbers below show, it is generally slower than HElayers and SEAL. The docker file contains only one example how to use Pyfhel with Integer FHE via BFV, however there are more extensive tutorials available online[^6].
+Pyfhel is a library that uses Microsoft SEAL in the background and provides easy access to homomorphic encryption functionality. It uses a syntax similar to normal arithmetic such as \*, +, -, >>, \*\*. It supports Integer FHE with BFV and Fixed-point FHE with CKKS. Thus it is an easy library to get started quickly. The docker file that it ships in, contains only one example how to use Pyfhel with Integer FHE via BFV, however there are more extensive tutorials available online[^6].
 
 #### Advantages
 - Easy to start
 - Tutorials available online
 
 #### Disadvantages
-- Very slow execution times compared to HElayers and SEAL-Python
+- Slower compared to SEAL-Python
 
 ### SEAL-Python
 SEAL-Python is a lightweight python binding for the Microsoft SEAL framework. The image provides examples for basic BGV arithmetics, matrix operations and serialization. There is little documentation available, so you might need to dig through some sourcecode to get all of its features, however it's not complicated - the wrapper only has 687 lines. SEAL-Python does not have a designated power operation.
 
 #### Advantages
-- Fastest execution times compared to Pyfhel and HElayers
+- Very fast computation times
 - Offers easy access to some of Microsoft SEAL's functionality including matrix operations
 - Extremely lightweight
 
